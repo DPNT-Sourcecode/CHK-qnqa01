@@ -12,7 +12,8 @@ def checkout(skus):
         'A': 50,
         'B': 30,
         'C': 20,
-        'D': 15
+        'D': 15,
+        'E': 40
     }
 
     final_sum = 0
@@ -27,6 +28,7 @@ def checkout(skus):
             print(f'take free offers are available for the key: {key}')
             for offer in take_free_offers[key]:
                 even_num = val // offer['num']
+                print(f'even num is {even_num}')
 
                 # reduce items
                 item_to_take_for_free = offer['free_item_name']
@@ -55,4 +57,5 @@ def checkout(skus):
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
 
