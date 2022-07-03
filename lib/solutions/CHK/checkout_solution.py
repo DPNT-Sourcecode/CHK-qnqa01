@@ -32,18 +32,20 @@ def checkout(skus):
         if not key in available_skus:
             return -1
         
-        current_sum = 0
+        # calculate the special offers first
         if key in special_offers:
             even_num = val // special_offers[key]['num']
 
-            # calculate the special offers first
-            current_sum += even_num * special_offers[key]['price']
+            final_sum += even_num * special_offers[key]['price']
 
-            # calculate others
-            current_sum += (val - even_num) * available_skus[key]
+        # calculate others
+        final_sum += (val - even_num) * available_skus[key]
+
+    return final_sum
 
 
     return -1
+
 
 
 

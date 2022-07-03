@@ -1,6 +1,7 @@
 from solutions.HLO.hello_solution import hello
 
 
-class TestSum():
-    def test_sum(self):
+class TestHello():
+    def test_hello(self):
         assert hello('John') == "Hello, John!"
+
