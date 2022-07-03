@@ -18,7 +18,7 @@ def checkout(skus):
     special_offers = {
         'A': [
             {
-                'name': Offer.TakeFree,
+                'name': Offer.NForX,
                 'num': 5,
                 'price': 200
             },
@@ -76,4 +76,5 @@ def checkout(skus):
             final_sum += val * available_skus[key]
 
     return final_sum
+
 
