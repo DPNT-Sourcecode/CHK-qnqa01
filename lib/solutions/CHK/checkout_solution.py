@@ -14,10 +14,13 @@ def checkout(skus):
     }
 
     special_offers = {
-        'A': {
-            'num': 3,
-            'price': 130
-        },
+        'A': [
+            {
+                'NForX'
+                'num': 3,
+                'price': 130
+            }
+        ],
         'B': {
             'num': 2,
             'price': 45
@@ -52,7 +55,5 @@ def checkout(skus):
 
     return final_sum
 
-
-    return -1
 
 
