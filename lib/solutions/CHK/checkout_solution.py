@@ -32,6 +32,7 @@ def checkout(skus):
 
                 # reduce items
                 item_to_take_for_free = offer['free_item_name']
+                print(f'Item to change {sku_groups[item_to_take_for_free]}')
                 sku_groups[item_to_take_for_free] -= even_num
 
                 if sku_groups[item_to_take_for_free] < 0:
@@ -57,5 +58,6 @@ def checkout(skus):
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
 
 
