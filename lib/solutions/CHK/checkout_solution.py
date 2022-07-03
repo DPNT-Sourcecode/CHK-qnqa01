@@ -15,34 +15,7 @@ def checkout(skus):
         'D': 15
     }
 
-    special_offers = {
-        'A': [
-            {
-                'name': Offer.NForX,
-                'num': 5,
-                'price': 200
-            },
-            {
-                'name': Offer.NForX,
-                'num': 3,
-                'price': 130
-            }
-        ],
-        'B': [
-            {
-                'name': Offer.NForX,
-                'num': 2,
-                'price': 45
-            }
-        ],
-        'E': [
-            {
-                'name': Offer.TakeFree,
-                'num': 2,
-                'freeItemName': 'B'
-            }
-        ]
-    }
+    
 
     final_sum = 0
 
@@ -54,9 +27,9 @@ def checkout(skus):
         
         # calculate the special offers first
         if key in special_offers:
-            take_free_offers = filter(lambda offer: offer['name'] == Offer.TakeFree, special_offers.keys())
+            # take_free_offers = filter(lambda offer: offer['name'] == Offer.TakeFree, special_offers.keys())
 
-            for offer in take_free_offers:
+            # for offer in take_free_offers:
 
 
             even_num = val // special_offers[key]['num']
@@ -76,5 +49,6 @@ def checkout(skus):
             final_sum += val * available_skus[key]
 
     return final_sum
+
 
 

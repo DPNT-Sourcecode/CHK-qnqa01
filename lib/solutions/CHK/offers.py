@@ -35,9 +35,13 @@ special_offers = {
 
 take_free_offers = {}
 
-for sku, offers in special_offers.items():
-    for offer in offers:
-        if offer['name'] == Offer.TakeFree:
+# for sku, offers in special_offers.items():
+#     for offer in offers:
+#         if offer['name'] == Offer.TakeFree:
+#             if sku in take_free_offers:
+#                 take_free_offers[sku].append(offer)
+#             else:
+#                 take_free_offers[sku] = [offer]
 
 
 
