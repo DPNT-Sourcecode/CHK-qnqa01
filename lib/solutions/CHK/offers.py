@@ -33,7 +33,13 @@ special_offers = {
     ]
 }
 
-take_free_offers = {
-    
-}
+take_free_offers = {}
+
+for sku, offers in special_offers.items():
+    for offer in offers:
+        if offer['name'] == Offer.TakeFree:
+
+
+
+
 
