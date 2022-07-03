@@ -35,11 +35,14 @@ def checkout(skus):
         # calculate the special offers first
         if key in special_offers:
             even_num = val // special_offers[key]['num']
+            print(f'even_num: {even_num}')
 
-            final_sum += even_num * special_offers[key]['price']
+            offers_price = even_num * special_offers[key]['price']
 
             # calculate others
-            final_sum += (val - even_num) * available_skus[key]
+            rest_sum = (val - even_num) * available_skus[key]
+
+            final_sum += offers_price + rest_sum
         else:
             final_sum += val * available_skus[key]
 
@@ -47,3 +50,4 @@ def checkout(skus):
 
 
     return -1
+
