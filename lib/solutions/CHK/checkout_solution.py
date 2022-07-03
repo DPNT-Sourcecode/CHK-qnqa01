@@ -16,15 +16,30 @@ def checkout(skus):
     special_offers = {
         'A': [
             {
-                'NForX'
+                'name': 'NForX',
+                'num': 5,
+                'price': 200
+            },
+            {
+                'name': 'NForX',
                 'num': 3,
                 'price': 130
             }
         ],
-        'B': {
-            'num': 2,
-            'price': 45
-        }
+        'B': [
+            {
+                'name': 'NForX',
+                'num': 2,
+                'price': 45
+            }
+        ],
+        'E': [
+            {
+                'name': 'TakeFree',
+                'num': 2,
+                'freeItemName': 'B'
+            }
+        ]
     }
 
     final_sum = 0
@@ -54,6 +69,7 @@ def checkout(skus):
             final_sum += val * available_skus[key]
 
     return final_sum
+
 
 
 
