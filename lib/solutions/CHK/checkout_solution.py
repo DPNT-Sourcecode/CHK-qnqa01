@@ -1,6 +1,6 @@
 from collections import Counter
 
-from sandbox.interview_tasks.accelerate_runner.lib.solutions.CHK.offers import take_free_offers
+from sandbox.interview_tasks.accelerate_runner.lib.solutions.CHK.offers import take_free_offers, n_for_x_offers
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -20,24 +20,30 @@ def checkout(skus):
     sku_groups = Counter(skus)
 
     for key, val in sku_groups.items():
-        for offer in take_free_offers:
-                even_num = val // offer[key]['num']
-
-    for key, val in sku_groups.items():
         if not key in available_skus:
             return -1
+
+        if key in n_for_x_offers:
+            for offer in take_free_offers[key]:
+                even_num = val // offer['num']
+
+                # reduce items
+                
+
+    for key, val in sku_groups.items():
+        
         
         # calculate the special offers first
-        if key in special_offers:
-            even_num = val // special_offers[key]['num']
+        if key in n_for_x_offers:
+            even_num = val // n_for_x_offers[key]['num']
             print(f'even_num: {even_num}')
 
-            offers_price = even_num * special_offers[key]['price']
+            offers_price = even_num * n_for_x_offers[key]['price']
 
             print(f'offers price: {offers_price}')
 
             # calculate others
-            rest_sum = (val - even_num * special_offers[key]['num']) * available_skus[key]
+            rest_sum = (val - even_num * n_for_x_offers[key]['num']) * available_skus[key]
 
             final_sum += offers_price + rest_sum
 
@@ -46,6 +52,7 @@ def checkout(skus):
             final_sum += val * available_skus[key]
 
     return final_sum
+
 
 
 
