@@ -1,5 +1,7 @@
 from collections import Counter
 
+from sandbox.interview_tasks.accelerate_runner.lib.solutions.CHK.offers import Offer
+
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
@@ -16,19 +18,19 @@ def checkout(skus):
     special_offers = {
         'A': [
             {
-                'name': 'NForX',
+                'name': Offer.TakeFree,
                 'num': 5,
                 'price': 200
             },
             {
-                'name': 'NForX',
+                'name': Offer.NForX,
                 'num': 3,
                 'price': 130
             }
         ],
         'B': [
             {
-                'name': 'NForX',
+                'name': Offer.NForX,
                 'num': 2,
                 'price': 45
             }
@@ -52,7 +54,7 @@ def checkout(skus):
         
         # calculate the special offers first
         if key in special_offers:
-            take_free_offers = filter(special_offers.keys())
+            take_free_offers = filter(lambda offer: offer['name'] == Offer.TakeFree, special_offers.keys())
 
             even_num = val // special_offers[key]['num']
             print(f'even_num: {even_num}')
@@ -71,8 +73,3 @@ def checkout(skus):
             final_sum += val * available_skus[key]
 
     return final_sum
-
-
-
-
-
