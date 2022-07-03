@@ -20,7 +20,7 @@ def checkout(skus):
     sku_groups = Counter(skus)
 
     # apply take_free_offers
-    for key, val in sku_groups.items():
+    for key, val in sku_groups.copy().items():
         if not key in available_skus:
             return -1
 
@@ -35,6 +35,7 @@ def checkout(skus):
                 print(f'Item to change {sku_groups[item_to_take_for_free]}')
                 sku_groups[item_to_take_for_free] -= even_num
 
+                # items cannot be negative
                 if sku_groups[item_to_take_for_free] < 0:
                     sku_groups[item_to_take_for_free] = 0
 
@@ -58,6 +59,7 @@ def checkout(skus):
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
 
 
 
