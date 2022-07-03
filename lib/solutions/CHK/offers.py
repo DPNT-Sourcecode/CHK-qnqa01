@@ -27,7 +27,7 @@ take_free_offers = {
     'E': [
         {
             'num': 2,
-            'freeItemName': 'B'
+            'free_item_name': 'B'
         }
     ]
 }
@@ -39,6 +39,7 @@ take_free_offers = {
 #                 take_free_offers[sku].append(offer)
 #             else:
 #                 take_free_offers[sku] = [offer]
+
 
 
 

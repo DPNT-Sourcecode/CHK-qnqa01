@@ -19,6 +19,7 @@ def checkout(skus):
     final_sum = 0
     sku_groups = Counter(skus)
 
+    # apply take_free_offers
     for key, val in sku_groups.items():
         if not key in available_skus:
             return -1
@@ -28,11 +29,14 @@ def checkout(skus):
                 even_num = val // offer['num']
 
                 # reduce items
-                
+                item_to_take_for_free = offer['free_item_name']
+                sku_groups[item_to_take_for_free] -= even_num
 
+                if sku_groups[item_to_take_for_free] < 0:
+                    sku_groups[item_to_take_for_free] = 0
+
+    # apply n_for_x_offers
     for key, val in sku_groups.items():
-        
-        
         # calculate the special offers first
         if key in n_for_x_offers:
             even_num = val // n_for_x_offers[key]['num']
@@ -52,6 +56,7 @@ def checkout(skus):
             final_sum += val * available_skus[key]
 
     return final_sum
+
 
 
 
