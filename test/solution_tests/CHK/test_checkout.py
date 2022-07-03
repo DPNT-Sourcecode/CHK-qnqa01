@@ -18,9 +18,11 @@ class TestCheckout():
         assert checkout('ABCD') == 115
 
     def test_special_offers(self):
+        assert checkout('BB') == 45
+        assert checkout('AAA') == 130
         assert checkout('AAAB') == 160
-        assert checkout('AAABAAABCBA') == 160 # 2x3A and 2B + ABC
-        
+        assert checkout('AAABCDCDCD') == 265
+        assert checkout('AAABAAABCBA') == 405 # 2x3A and 2B + ABC
 
     def test_invalid_input(self):
         assert checkout(123) == -1
@@ -28,5 +30,6 @@ class TestCheckout():
         assert checkout(None) == -1
         assert checkout(str) == -1
         assert checkout('EFGH') == -1
+
 
 
