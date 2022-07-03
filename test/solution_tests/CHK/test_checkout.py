@@ -13,7 +13,13 @@ Our price table and offers:
 class TestCheckout():
     def test_simple_input(self):
         assert checkout('AB') == 80
-        assert checkout('AB') == 80
+        assert checkout('AC') == 70
+        assert checkout('D') == 15
+        assert checkout('ABCD') == 115
+
+    def test_special_offers(self):
+        assert checkout('AAAB') == 80
+        
 
     def test_invalid_input(self):
         assert checkout(123) == -1

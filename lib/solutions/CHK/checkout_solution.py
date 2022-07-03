@@ -38,16 +38,12 @@ def checkout(skus):
 
             final_sum += even_num * special_offers[key]['price']
 
-        # calculate others
-        final_sum += (val - even_num) * available_skus[key]
+            # calculate others
+            final_sum += (val - even_num) * available_skus[key]
+        else:
+            final_sum += val * available_skus[key]
 
     return final_sum
 
 
     return -1
-
-
-
-
-
-
