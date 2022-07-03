@@ -19,6 +19,7 @@ class TestCheckout():
 
     def test_special_offers(self):
         assert checkout('AAAB') == 160
+        assert checkout('AAABAAABCBA') == 160 # 2x3A and 2B + ABC
         
 
     def test_invalid_input(self):
@@ -27,4 +28,5 @@ class TestCheckout():
         assert checkout(None) == -1
         assert checkout(str) == -1
         assert checkout('EFGH') == -1
+
 
