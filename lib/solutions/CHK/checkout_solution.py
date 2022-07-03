@@ -24,6 +24,7 @@ def checkout(skus):
             return -1
 
         if key in take_free_offers:
+            print(f'take free offers are available for the key: {key}')
             for offer in take_free_offers[key]:
                 even_num = val // offer['num']
 
@@ -40,6 +41,7 @@ def checkout(skus):
         if key in n_for_x_offers:
             for offer in n_for_x_offers[key]:
                 even_num = val // offer['num']
+                print(f'even num is {even_num}')
 
                 offers_price = even_num * offer['price']
 
@@ -48,14 +50,8 @@ def checkout(skus):
 
                 final_sum += offers_price + rest_sum
         else:
+            
             final_sum += val * available_skus[key]
+            print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
-
-
-
-
-
-
-
-
