@@ -1,6 +1,6 @@
 from collections import Counter
 
-from sandbox.interview_tasks.accelerate_runner.lib.solutions.CHK.offers import Offer
+from sandbox.interview_tasks.accelerate_runner.lib.solutions.CHK.offers import take_free_offers
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -15,11 +15,13 @@ def checkout(skus):
         'D': 15
     }
 
-    
 
     final_sum = 0
-
     sku_groups = Counter(skus)
+
+    for key, val in sku_groups.items():
+        for offer in take_free_offers:
+                even_num = val // offer[key]['num']
 
     for key, val in sku_groups.items():
         if not key in available_skus:
@@ -27,11 +29,6 @@ def checkout(skus):
         
         # calculate the special offers first
         if key in special_offers:
-            # take_free_offers = filter(lambda offer: offer['name'] == Offer.TakeFree, special_offers.keys())
-
-            # for offer in take_free_offers:
-
-
             even_num = val // special_offers[key]['num']
             print(f'even_num: {even_num}')
 
@@ -49,6 +46,7 @@ def checkout(skus):
             final_sum += val * available_skus[key]
 
     return final_sum
+
 
 
 
