@@ -4,5 +4,6 @@
 # friend_name = unicode string
 def hello(friend_name):
     # return f'Hello world, {friend_name}'
-    return 'Hello world'
+    return 'Hello, World!'
+
 
