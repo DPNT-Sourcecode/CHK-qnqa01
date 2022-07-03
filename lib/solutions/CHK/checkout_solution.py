@@ -37,7 +37,7 @@ def checkout(skus):
         ],
         'E': [
             {
-                'name': 'TakeFree',
+                'name': Offer.TakeFree,
                 'num': 2,
                 'freeItemName': 'B'
             }
@@ -56,6 +56,9 @@ def checkout(skus):
         if key in special_offers:
             take_free_offers = filter(lambda offer: offer['name'] == Offer.TakeFree, special_offers.keys())
 
+            for offer in take_free_offers:
+
+
             even_num = val // special_offers[key]['num']
             print(f'even_num: {even_num}')
 
@@ -73,3 +76,4 @@ def checkout(skus):
             final_sum += val * available_skus[key]
 
     return final_sum
+
