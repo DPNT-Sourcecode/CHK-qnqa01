@@ -8,8 +8,6 @@ def checkout(skus):
     if type(skus) != str:
         return -1
 
-    
-
     final_sum = 0
     sku_groups = Counter(skus)
 
@@ -58,5 +56,3 @@ def checkout(skus):
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
-
-
