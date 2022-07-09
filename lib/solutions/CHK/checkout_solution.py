@@ -57,6 +57,9 @@ def checkout(skus):
         rest_str = any_of_list_str[offer_applied_times * n_any_of_list_for_x['num']:]
 
         print(f'String after applying offers: {any_of_list_str}')
+        print(f'Rest string to apply with no offers: {rest_str}')
+
+        print(f'Final sum before rest string: {final_sum}')
 
         for rest_char in rest_str:
             final_sum += sku_prices[rest_char]
@@ -86,5 +89,6 @@ def checkout(skus):
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
 
 
