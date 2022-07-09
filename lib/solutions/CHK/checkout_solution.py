@@ -31,7 +31,12 @@ def checkout(skus):
                 if sku_groups[item_to_take_for_free] < 0:
                     sku_groups[item_to_take_for_free] = 0
 
-    # apply n_for_x_offers
+    # apply n_any_of_list_for_x
+    any_of_list = []
+    for key, val in sku_groups.items():
+        product_count = val
+
+    # apply n_for_x_offers 
     for key, val in sku_groups.items():
         product_count = val
         # calculate the special offers first
@@ -51,11 +56,10 @@ def checkout(skus):
 
             final_sum += total_offer_price + rest_sku_price
             print(f'Finale sum of {key} key is {final_sum}')
-        elif key in n_any_of_list_for_x['items']:
-            
         else:
             final_sum += val * sku_prices[key]
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
 
