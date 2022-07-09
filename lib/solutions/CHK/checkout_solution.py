@@ -43,8 +43,9 @@ def checkout(skus):
 
     final_sum += offer_applied_times * n_any_of_list_for_x['price']
 
-    for idx in range(any_of_list):
-        if any_of_list[idx][]
+    idx = 0
+    while total_n_of_any_count > 0:
+
 
     # apply n_for_x_offers 
     for key, val in sku_groups.items():
@@ -71,5 +72,6 @@ def checkout(skus):
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
 
 
