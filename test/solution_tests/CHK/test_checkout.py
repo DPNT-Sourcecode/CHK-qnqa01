@@ -174,13 +174,15 @@ class TestCheckout():
         assert checkout('S' * 6) == 90
         assert checkout('SSSTTTT') == 110
         assert checkout('SSSTTTT') == 110
-        assert checkout('XXZZZ') == 79
-        assert checkout('STXYZ') == 79
+        assert checkout('XXZZZ') == 79 # only Z will get to the offers
+        assert checkout('STXYZ') == 82 # X and any other of cost 20 will be left out of offers
+        assert checkout('SSTTXXYYZZ') == 152 # 3 of any 45*3 + X(17)
 
     def test_invalid_input(self):
         assert checkout(123) == -1
         assert checkout('random words') == -1
         assert checkout(None) == -1
         assert checkout(str) == -1
+
 
 
