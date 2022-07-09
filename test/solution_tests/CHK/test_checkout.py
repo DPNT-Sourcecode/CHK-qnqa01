@@ -20,7 +20,21 @@ New items and offers:
 | D    | 15    |                        |
 | E    | 40    | 2E get one B free      |
 +------+-------+------------------------+
+
+New offers:
++------+-------+------------------------+
+| Item | Price | Special offers         |
++------+-------+------------------------+
+| A    | 50    | 3A for 130, 5A for 200 |
+| B    | 30    | 2B for 45              |
+| C    | 20    |                        |
+| D    | 15    |                        |
+| E    | 40    | 2E get one B free      |
+| F    | 10    | 2F get one F free      |
++------+-------+------------------------+
 '''
+
+
 class TestCheckout():
     def skip_test_simple_input(self):
         assert checkout('AB') == 80
@@ -40,6 +54,9 @@ class TestCheckout():
         assert checkout('EE') == 80
         assert checkout('EEB') == 80
         assert checkout('EEBB') == 110 # E rule is expected to work first
+        assert checkout('FFF') == 20 
+        assert checkout('FFFFF') == 40 
+        assert checkout('FFFFFFF') == 50 
 
     def skip_test_invalid_input(self):
         assert checkout(123) == -1
@@ -47,5 +64,6 @@ class TestCheckout():
         assert checkout(None) == -1
         assert checkout(str) == -1
         assert checkout('EFGH') == -1
+
 
 

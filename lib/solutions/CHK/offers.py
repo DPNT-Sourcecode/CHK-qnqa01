@@ -20,6 +20,12 @@ n_for_x_offers = {
             'num': 2,
             'price': 45
         }
+    ],
+    'F': [
+        {
+            'num': 3,
+            'price': 20
+        }
     ]
 }
 
@@ -39,5 +45,6 @@ take_free_offers = {
 #                 take_free_offers[sku].append(offer)
 #             else:
 #                 take_free_offers[sku] = [offer]
+
 
 

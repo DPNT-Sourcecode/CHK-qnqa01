@@ -13,7 +13,8 @@ def checkout(skus):
         'B': 30,
         'C': 20,
         'D': 15,
-        'E': 40
+        'E': 40,
+        'F': 10
     }
 
     final_sum = 0
@@ -64,3 +65,4 @@ def checkout(skus):
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
