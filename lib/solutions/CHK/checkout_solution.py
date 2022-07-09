@@ -8,7 +8,7 @@ def checkout(skus):
     if type(skus) != str:
         return -1
 
-    available_skus = {
+    sku_prices = {
         'A': 50,
         'B': 30,
         'C': 20,
@@ -21,7 +21,7 @@ def checkout(skus):
 
     # apply take_free_offers
     for key, val in sku_groups.copy().items():
-        if not key in available_skus:
+        if not key in sku_prices:
             return -1
 
         if key in take_free_offers:
@@ -45,18 +45,19 @@ def checkout(skus):
         if key in n_for_x_offers:
             print(f'Rule N for X is working here for key {key}')
             for offer in n_for_x_offers[key]:
-                even_num = val // offer['num']
+                offer_works_times = val // offer['num']
 
-                offers_price = even_num * offer['price']
+                offers_price = offer_works_times * offer['price']
 
             # calculate others
-            rest_sum = (val - even_num * offer['num']) * available_skus[key]
+            rest_sum = (val - offers_price) * sku_prices[key]
 
             final_sum += offers_price + rest_sum
             print(f'Finale sum after {key} key is {final_sum}')
         else:
-            final_sum += val * available_skus[key]
+            final_sum += val * sku_prices[key]
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
 
