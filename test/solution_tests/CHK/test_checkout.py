@@ -68,14 +68,14 @@ Even more prices:
 
 
 class TestCheckout():
-    def skip_test_simple_input(self):
+    def test_simple_input(self):
         assert checkout('AB') == 80
         assert checkout('AC') == 70
         assert checkout('D') == 15
         assert checkout('ABCD') == 115
         assert checkout('ABCDE') == 155
 
-    def skip_test_special_offers(self):
+    def test_special_offers(self):
         assert checkout('BB') == 45
         assert checkout('AAA') == 130
         assert checkout('AAAB') == 160
@@ -137,12 +137,12 @@ class TestCheckout():
         assert checkout('V' * 4) == 180
         assert checkout('V' * 6) == 260
 
-    def skip_test_invalid_input(self):
+    def test_invalid_input(self):
         assert checkout(123) == -1
         assert checkout('random words') == -1
         assert checkout(None) == -1
         assert checkout(str) == -1
-        assert checkout('EFGH') == -1
+
 
 
 
