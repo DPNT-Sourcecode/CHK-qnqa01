@@ -170,11 +170,12 @@ class TestCheckout():
         assert checkout('V' * 6) == 260
 
     def test_n_any_of_list_for_x(self):
-        assert checkout('SSS') == 45
+        assert checkout('S' * 3) == 45
+        assert checkout('S' * 6) == 90
+        assert checkout('SSSTTTT') == 110
 
     def test_invalid_input(self):
         assert checkout(123) == -1
         assert checkout('random words') == -1
         assert checkout(None) == -1
         assert checkout(str) == -1
-
