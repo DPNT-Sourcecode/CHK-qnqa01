@@ -43,6 +43,7 @@ def checkout(skus):
     for key, val in sku_groups.items():
         # calculate the special offers first
         if key in n_for_x_offers:
+            total_offer_price = 0
             print(f'Rule N for X is working here for key {key}')
             for offer in n_for_x_offers[key]:
                 offer_works_times = val // offer['num']
@@ -59,6 +60,7 @@ def checkout(skus):
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
 
 
 

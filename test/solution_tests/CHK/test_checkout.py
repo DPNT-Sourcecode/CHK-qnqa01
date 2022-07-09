@@ -28,7 +28,7 @@ class TestCheckout():
         assert checkout('D') == 15
         assert checkout('ABCD') == 115
         assert checkout('ABCDE') == 155
-
+    
     def test_special_offers(self):
         # assert checkout('BB') == 45
         # assert checkout('AAA') == 130
@@ -42,5 +42,6 @@ class TestCheckout():
         assert checkout(None) == -1
         assert checkout(str) == -1
         assert checkout('EFGH') == -1
+
 
 
