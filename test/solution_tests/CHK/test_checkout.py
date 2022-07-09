@@ -34,7 +34,7 @@ class TestCheckout():
         assert checkout('AAA') == 130
         assert checkout('AAAB') == 160
         assert checkout('AAABCDCDCD') == 265
-        assert checkout('AAABAAABCBA') == 405 # 2x3A and 2B + ABC
+        assert checkout('AAABAAABCBA') == 395 # 200 + 50 + 50 + 45 + 30 + 20
 
     def test_invalid_input(self):
         assert checkout(123) == -1
@@ -42,3 +42,4 @@ class TestCheckout():
         assert checkout(None) == -1
         assert checkout(str) == -1
         assert checkout('EFGH') == -1
+
