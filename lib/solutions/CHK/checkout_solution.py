@@ -46,12 +46,18 @@ def checkout(skus):
     if len(any_of_list):
         offer_applied_times = total_n_of_any_count // n_any_of_list_for_x['num']
 
+        print(f'Offer applied for n_any_of_list_for_x {offer_applied_times} times')
+        print(f'Total n of any count: {total_n_of_any_count}')
+
         final_sum += offer_applied_times * n_any_of_list_for_x['price']
         
         # the most expensive products should be applied first
         any_of_list = sorted(any_of_list, key=lambda i: sku_prices[i[0]], reverse=True)
         any_of_list_str = ''.join([i[0] * i[1] for i in any_of_list])
         rest_str = any_of_list_str[total_n_of_any_count:]
+
+        print(f'String after applying offers: {any_of_list_str}')
+
         for rest_char in rest_str:
             final_sum += sku_prices[rest_char]
 
@@ -80,3 +86,4 @@ def checkout(skus):
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
