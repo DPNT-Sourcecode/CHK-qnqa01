@@ -64,6 +64,8 @@ def checkout(skus):
         for rest_char in rest_str:
             final_sum += sku_prices[rest_char]
 
+        print(f'Final sum before rest string: {final_sum}')
+
     # apply n_for_x_offers 
     for key, val in sku_groups.items():
         product_count = val
@@ -89,6 +91,7 @@ def checkout(skus):
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
 
 
 
