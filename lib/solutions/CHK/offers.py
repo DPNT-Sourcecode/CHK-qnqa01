@@ -89,12 +89,12 @@ n_for_x_offers = {
     ],
     'H': [
         {
-            'num': 5,
-            'price': 45
-        },
-        {
             'num': 10,
             'price': 80
+        },
+        {
+            'num': 5,
+            'price': 45
         }
     ],
     'K': [
@@ -114,6 +114,22 @@ n_for_x_offers = {
             'num': 3,
             'price': 80
         }
+    ],
+    'U': [
+        {
+            'num': 4,
+            'price': 120
+        }
+    ],
+    'U': [
+        {
+            'num': 3,
+            'price': 130
+        },
+        {
+            'num': 2,
+            'price': 90
+        }
     ]
 }
 
@@ -129,16 +145,15 @@ take_free_offers = {
             'num': 3,
             'free_item_name': 'M'
         }
+    ],
+    'R': [
+        {
+            'num': 3,
+            'free_item_name': 'Q'
+        }
     ]
 }
 
-# for sku, offers in special_offers.items():
-#     for offer in offers:
-#         if offer['name'] == Offer.TakeFree:
-#             if sku in take_free_offers:
-#                 take_free_offers[sku].append(offer)
-#             else:
-#                 take_free_offers[sku] = [offer]
 
 
 
