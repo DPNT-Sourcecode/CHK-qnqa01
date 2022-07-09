@@ -2,7 +2,8 @@ from enum import Enum
 
 class Offer(Enum):
     TakeFree = 'take_free',
-    NForX = 'n_for_x'
+    NForX = 'n_for_x',
+    AnyOfNForX = 'n_any_of_list_for_x'
 
 sku_prices = {
         'A': 50,
@@ -153,5 +154,6 @@ take_free_offers = {
         }
     ]
 }
+
 
 
