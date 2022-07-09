@@ -70,7 +70,7 @@ n_for_x_offers = {
     'K': [
         {
             'num': 2,
-            'price': 150
+            'price': 120
         }
     ],
     'P': [
@@ -129,6 +129,7 @@ n_any_of_list_for_x = {
     'num': 3,
     'price': 45
 }
+
 
 
 
