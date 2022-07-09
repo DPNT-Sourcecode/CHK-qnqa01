@@ -86,6 +86,34 @@ n_for_x_offers = {
             'num': 3,
             'price': 20
         }
+    ],
+    'H': [
+        {
+            'num': 5,
+            'price': 45
+        },
+        {
+            'num': 10,
+            'price': 80
+        }
+    ],
+    'K': [
+        {
+            'num': 2,
+            'price': 150
+        }
+    ],
+    'P': [
+        {
+            'num': 5,
+            'price': 200
+        }
+    ],
+    'Q': [
+        {
+            'num': 3,
+            'price': 80
+        }
     ]
 }
 
@@ -94,6 +122,12 @@ take_free_offers = {
         {
             'num': 2,
             'free_item_name': 'B'
+        }
+    ],
+    'N': [
+        {
+            'num': 3,
+            'free_item_name': 'M'
         }
     ]
 }
@@ -105,6 +139,7 @@ take_free_offers = {
 #                 take_free_offers[sku].append(offer)
 #             else:
 #                 take_free_offers[sku] = [offer]
+
 
 
 
