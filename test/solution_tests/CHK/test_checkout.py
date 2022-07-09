@@ -97,10 +97,19 @@ class TestCheckout():
         assert checkout('H' * 16) == 135
 
     def test_offers_for_k(self):
-        assert checkout('H' * 2) == 150
-        assert checkout('H' * 10) == 80
-        assert checkout('H' * 15) == 125
-        assert checkout('H' * 16) == 135
+        assert checkout('K') == 80
+        assert checkout('K' * 2) == 150
+        assert checkout('K' * 3) == 230
+
+    def test_offers_for_n(self):
+        assert checkout('NNN') == 120
+        assert checkout('NNNM') == 120
+        assert checkout('NNNMM') == 135
+
+    def test_offers_for_p(self):
+        assert checkout('P' * 5) == 200
+        assert checkout('NNNM') == 120
+        assert checkout('NNNMM') == 135
 
     def skip_test_invalid_input(self):
         assert checkout(123) == -1
@@ -108,5 +117,6 @@ class TestCheckout():
         assert checkout(None) == -1
         assert checkout(str) == -1
         assert checkout('EFGH') == -1
+
 
 
