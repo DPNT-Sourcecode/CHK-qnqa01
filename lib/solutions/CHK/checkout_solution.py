@@ -1,6 +1,6 @@
 from collections import Counter
 
-from .offers import take_free_offers, n_for_x_offers, sku_prices
+from .offers import take_free_offers, n_for_x_offers, sku_prices, n_any_of_list_for_x
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -51,8 +51,11 @@ def checkout(skus):
 
             final_sum += total_offer_price + rest_sku_price
             print(f'Finale sum of {key} key is {final_sum}')
+        elif key in n_any_of_list_for_x['items']:
+            
         else:
             final_sum += val * sku_prices[key]
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
