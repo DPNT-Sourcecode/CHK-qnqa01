@@ -47,17 +47,18 @@ def checkout(skus):
             for offer in n_for_x_offers[key]:
                 offer_works_times = val // offer['num']
 
-                offers_price = offer_works_times * offer['price']
+                total_offer_price = offer_works_times * offer['price']
 
             # calculate others
-            rest_sum = (val - offers_price) * sku_prices[key]
+            rest_sku_price = (val - offer_works_times) * sku_prices[key]
 
-            final_sum += offers_price + rest_sum
-            print(f'Finale sum after {key} key is {final_sum}')
+            final_sum += total_offer_price + rest_sku_price
+            print(f'Finale sum of {key} key is {final_sum}')
         else:
             final_sum += val * sku_prices[key]
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
 
 
