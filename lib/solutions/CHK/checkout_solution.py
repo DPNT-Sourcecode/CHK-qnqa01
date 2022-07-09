@@ -1,6 +1,6 @@
 from collections import Counter
 
-from .offers import take_free_offers, n_for_x_offers
+from .offers import take_free_offers, n_for_x_offers, sku_prices
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -8,14 +8,7 @@ def checkout(skus):
     if type(skus) != str:
         return -1
 
-    sku_prices = {
-        'A': 50,
-        'B': 30,
-        'C': 20,
-        'D': 15,
-        'E': 40,
-        'F': 10
-    }
+    
 
     final_sum = 0
     sku_groups = Counter(skus)
@@ -65,4 +58,5 @@ def checkout(skus):
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
 

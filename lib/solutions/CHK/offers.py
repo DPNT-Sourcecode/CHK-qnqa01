@@ -4,6 +4,15 @@ class Offer(Enum):
     TakeFree = 'take_free',
     NForX = 'n_for_x'
 
+sku_prices = {
+        'A': 50,
+        'B': 30,
+        'C': 20,
+        'D': 15,
+        'E': 40,
+        'F': 10
+    }
+
 n_for_x_offers = {
     'A': [
         {
@@ -45,6 +54,7 @@ take_free_offers = {
 #                 take_free_offers[sku].append(offer)
 #             else:
 #                 take_free_offers[sku] = [offer]
+
 
 
 
