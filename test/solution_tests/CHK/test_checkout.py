@@ -56,7 +56,7 @@ class TestCheckout():
         assert checkout('EEBB') == 110 # E rule is expected to work first
         assert checkout('FFF') == 20 
         assert checkout('FFFFF') == 40 
-        assert checkout('FFFFFFF') == 50 
+        assert checkout('FFFFFFF') == 50 # 7F, 2F + 1, 2F + 1 and + 1 more = 50
 
     def skip_test_invalid_input(self):
         assert checkout(123) == -1
@@ -64,6 +64,7 @@ class TestCheckout():
         assert checkout(None) == -1
         assert checkout(str) == -1
         assert checkout('EFGH') == -1
+
 
 
 
