@@ -34,7 +34,8 @@ class TestCheckout():
         # assert checkout('AAA') == 130
         # assert checkout('AAAB') == 160
         # assert checkout('AAABCDCDCD') == 265
-        assert checkout('AAAAAAAAA') == 280 # 9A = 200 + 130 + 50
+        assert checkout('AAAAAAAAA') == 380 # 9A = 200 + 130 + 50
+        assert checkout('AAAAAAAAABB') == 380 # 9A = 200 + 130 + 50
 
     def skip_test_invalid_input(self):
         assert checkout(123) == -1
@@ -42,7 +43,3 @@ class TestCheckout():
         assert checkout(None) == -1
         assert checkout(str) == -1
         assert checkout('EFGH') == -1
-
-
-
-

@@ -45,19 +45,16 @@ def checkout(skus):
         # calculate the special offers first
         if key in n_for_x_offers:
             total_offer_price = 0
-            totale_times_offer_applied = 0
             print(f'Rule N for X is working here for key {key}')
             for offer in n_for_x_offers[key]:
                 offer_applied_times = product_count // offer['num']
 
                 total_offer_price += offer_applied_times * offer['price']
 
-                totale_times_offer_applied += offer_applied_times
                 product_count -= offer_applied_times * offer['num']
-                print(f'Total times offer {key} worked: {totale_times_offer_applied}')
 
             # calculate others
-            print(f'Total times offer applied {totale_times_offer_applied} out of {val}')
+            print(f'No offer applied left {product_count} out of {val}')
             rest_sku_price = product_count * sku_prices[key]
 
             final_sum += total_offer_price + rest_sku_price
@@ -67,10 +64,3 @@ def checkout(skus):
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
-
-
-
-
-
-
-
