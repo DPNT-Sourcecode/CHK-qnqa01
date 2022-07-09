@@ -38,6 +38,8 @@ def checkout(skus):
         if key in n_any_of_list_for_x['items']:
             any_of_list.append((key, val))
             total_n_of_any_count += val
+
+    print(f'Any of N for x list: {any_of_list}')
     
 
     if len(any_of_list):
@@ -77,6 +79,7 @@ def checkout(skus):
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
 
 
 
