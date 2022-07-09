@@ -155,7 +155,3 @@ take_free_offers = {
 }
 
 
-
-
-
-

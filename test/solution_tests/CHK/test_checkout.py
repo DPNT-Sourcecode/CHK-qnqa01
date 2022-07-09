@@ -142,10 +142,3 @@ class TestCheckout():
         assert checkout('random words') == -1
         assert checkout(None) == -1
         assert checkout(str) == -1
-
-
-
-
-
-
-
