@@ -130,12 +130,20 @@ class TestCheckout():
         assert checkout('U' * 8) == 240
         assert checkout('U' * 9) == 280
 
+    def test_offers_for_v(self):
+        assert checkout('V') == 50
+        assert checkout('V' * 2) == 90
+        assert checkout('V' * 3) == 130
+        assert checkout('V' * 4) == 180
+        assert checkout('V' * 6) == 260
+
     def skip_test_invalid_input(self):
         assert checkout(123) == -1
         assert checkout('random words') == -1
         assert checkout(None) == -1
         assert checkout(str) == -1
         assert checkout('EFGH') == -1
+
 
 
 

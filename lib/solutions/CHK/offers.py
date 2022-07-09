@@ -121,7 +121,7 @@ n_for_x_offers = {
             'price': 120
         }
     ],
-    'U': [
+    'V': [
         {
             'num': 3,
             'price': 130
@@ -153,6 +153,7 @@ take_free_offers = {
         }
     ]
 }
+
 
 
 
