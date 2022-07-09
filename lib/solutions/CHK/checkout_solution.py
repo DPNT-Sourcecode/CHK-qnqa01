@@ -40,6 +40,7 @@ def checkout(skus):
             total_n_of_any_count += val
     any_of_list = sorted(any_of_list, key=lambda i: sku_prices[i[0]], reverse=True)
     any_of_list_str = ''.join([i[0] * i[1] for i in any_of_list])
+    rest_str = any_of_list_str[total_n_of_any_count:]
     offer_applied_times = total_n_of_any_count // n_any_of_list_for_x['num']
 
     final_sum += offer_applied_times * n_any_of_list_for_x['price']
@@ -71,6 +72,7 @@ def checkout(skus):
             print(f'Finale sum after {key} key is {final_sum}')
 
     return final_sum
+
 
 
 
